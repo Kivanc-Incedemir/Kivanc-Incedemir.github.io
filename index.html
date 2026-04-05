@@ -9,18 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #080c14;
-      --surface: #0d1120;
-      --surface2: #131928;
-      --border: #1c2540;
-      --border-bright: #2a3a5c;
-      --amber: #f59e0b;
-      --amber-glow: rgba(245, 158, 11, 0.15);
-      --sky: #38bdf8;
-      --sky-dim: rgba(56, 189, 248, 0.08);
-      --text: #dde4f0;
-      --text-muted: #4a5a7a;
-      --text-dim: #7a8faa;
+      --bg: #fafaf8;
+      --surface: #f2f0ec;
+      --surface2: #e8e5e0;
+      --border: #dedad3;
+      --border-bright: #c8c3ba;
+      --accent: #1a3a4a;
+      --accent-glow: rgba(26, 58, 74, 0.07);
+      --sky: #2a6478;
+      --sky-dim: rgba(42, 100, 120, 0.07);
+      --text: #1a1a18;
+      --text-muted: #8a8880;
+      --text-dim: #54524e;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,8 +39,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(56, 189, 248, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.025) 1px, transparent 1px);
+        linear-gradient(rgba(26, 58, 74, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 58, 74, 0.04) 1px, transparent 1px);
       background-size: 64px 64px;
       pointer-events: none;
       z-index: 0;
@@ -56,14 +56,14 @@
       align-items: center;
       justify-content: space-between;
       backdrop-filter: blur(16px);
-      background: rgba(8, 12, 20, 0.75);
+      background: rgba(250, 250, 248, 0.85);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-logo {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 13px;
-      color: var(--amber);
+      color: var(--accent);
       letter-spacing: 0.15em;
     }
 
@@ -89,11 +89,11 @@
       position: absolute;
       bottom: -4px; left: 0;
       width: 0; height: 1px;
-      background: var(--amber);
+      background: var(--accent);
       transition: width 0.3s ease;
     }
 
-    .nav-links a:hover { color: var(--amber); }
+    .nav-links a:hover { color: var(--accent); }
     .nav-links a:hover::after { width: 100%; }
 
     /* HERO */
@@ -122,7 +122,7 @@
     .hero-eyebrow {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 12px;
-      color: var(--amber);
+      color: var(--accent);
       letter-spacing: 0.22em;
       text-transform: uppercase;
       margin-bottom: 28px;
@@ -149,7 +149,7 @@
 
     .hero-name em {
       font-style: italic;
-      color: var(--amber);
+      color: var(--accent);
     }
 
     .hero-tagline {
@@ -175,7 +175,7 @@
       font-family: 'Playfair Display', serif;
       font-size: 40px;
       font-weight: 700;
-      color: var(--amber);
+      color: var(--accent);
       line-height: 1;
     }
 
@@ -215,7 +215,7 @@
       position: absolute;
       top: 0; left: -100%;
       width: 100%; height: 100%;
-      background: var(--amber);
+      background: var(--accent);
       animation: lineAnim 2.4s ease-in-out infinite 1.8s;
     }
 
@@ -244,7 +244,7 @@
     .sec-num {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
-      color: var(--amber);
+      color: var(--accent);
       letter-spacing: 0.1em;
       padding-top: 6px;
     }
@@ -324,7 +324,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 3px; height: 0;
-      background: var(--amber);
+      background: var(--accent);
       transition: height 0.45s cubic-bezier(.22,1,.36,1);
     }
 
@@ -332,7 +332,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 0% 0%, var(--amber-glow) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 0% 0%, var(--accent-glow) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.4s;
       pointer-events: none;
@@ -352,15 +352,15 @@
     .status-dot { width: 7px; height: 7px; border-radius: 50%; }
 
     .status-dot.live {
-      background: var(--amber);
+      background: var(--accent);
       animation: pulseDot 2.2s ease-in-out infinite;
     }
 
     .status-dot.done { background: var(--sky); }
 
     @keyframes pulseDot {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.5); }
-      50%       { box-shadow: 0 0 0 7px rgba(245,158,11,0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(26,58,74,0.4); }
+      50%       { box-shadow: 0 0 0 7px rgba(26,58,74,0); }
     }
 
     .proj-status-lbl {
@@ -442,7 +442,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: var(--amber);
+      background: var(--accent);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.3s cubic-bezier(.22,1,.36,1);
@@ -450,11 +450,11 @@
 
     .skill-chip span { position: relative; z-index: 1; }
 
-    .skill-chip:hover { color: var(--bg); border-color: var(--amber); }
+    .skill-chip:hover { color: #fafaf8; border-color: var(--accent); }
     .skill-chip:hover::before { transform: scaleX(1); }
 
     .skill-chip.core {
-      border-color: rgba(245, 158, 11, 0.3);
+      border-color: rgba(26, 58, 74, 0.3);
       color: var(--text);
       font-size: 14px;
       padding: 14px 28px;
@@ -482,7 +482,7 @@
       bottom: 0; left: 50%;
       transform: translateX(-50%);
       width: 0; height: 2px;
-      background: var(--amber);
+      background: var(--accent);
       transition: width 0.4s ease;
     }
 
@@ -500,7 +500,7 @@
     .lang-lvl {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
-      color: var(--amber);
+      color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.14em;
     }
@@ -568,9 +568,9 @@
       transition: border-color 0.25s;
     }
 
-    .contact-link:hover { color: var(--amber); }
-    .contact-link:hover .cl-arrow { width: 52px; background: var(--amber); }
-    .contact-link:hover .cl-arrow::after { border-left-color: var(--amber); }
+    .contact-link:hover { color: var(--accent); }
+    .contact-link:hover .cl-arrow { width: 52px; background: var(--accent); }
+    .contact-link:hover .cl-arrow::after { border-left-color: var(--accent); }
 
     /* FOOTER */
     footer {
@@ -717,6 +717,10 @@
           <div class="detail-val">Spring · .NET Core · Modern Technologies</div>
         </div>
         <div class="detail-row">
+          <div class="detail-lbl">German</div>
+          <div class="detail-val">B2 · Goethe-Zertifikat</div>
+        </div>
+        <div class="detail-row">
           <div class="detail-lbl">English</div>
           <div class="detail-val">TOEFL 77 · Professional proficiency</div>
         </div>
@@ -853,17 +857,17 @@
         <div class="lang-name">Turkish</div>
         <div class="lang-lvl">Native</div>
       </div>
-      <div class="lang-card reveal reveal-delay-1">
-        <div class="lang-name">Russian</div>
-        <div class="lang-lvl">Professional</div>
-      </div>
       <div class="lang-card reveal reveal-delay-2">
         <div class="lang-name">English</div>
-        <div class="lang-lvl">Professional · TOEFL 77</div>
+        <div class="lang-lvl">C1</div>
       </div>
       <div class="lang-card reveal reveal-delay-3">
         <div class="lang-name">German</div>
-        <div class="lang-lvl">B2</div>
+        <div class="lang-lvl">B2 · Goethe Certificate</div>
+      </div>
+            <div class="lang-card reveal reveal-delay-1">
+        <div class="lang-name">Russian</div>
+        <div class="lang-lvl">B1</div>
       </div>
     </div>
   </section>
@@ -872,7 +876,7 @@
   <div id="contact" style="position: relative; z-index: 1; border-top: 1px solid var(--border);">
     <div class="contact-strip">
       <div class="contact-left reveal">
-        <h2>Let's work<br><em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--amber);">together.</em></h2>
+        <h2>Let's work<br><em style="font-family:'Playfair Display',serif; font-style:italic; color:var(--accent);">together.</em></h2>
         <p>Open to interesting projects, new roles, and technical collaborations. Based in Istanbul, available for hybrid or remote engagements.</p>
       </div>
       <div class="contact-links reveal reveal-delay-1">
@@ -931,7 +935,7 @@
           const dy = nodes[i].y - nodes[j].y;
           const d  = Math.sqrt(dx * dx + dy * dy);
           if (d < 150) {
-            ctx.strokeStyle = `rgba(56,189,248,${(1 - d / 150) * 0.1})`;
+            ctx.strokeStyle = `rgba(26,58,74,${(1 - d / 150) * 0.12})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -942,7 +946,7 @@
       }
 
       for (const n of nodes) {
-        ctx.fillStyle = 'rgba(245,158,11,0.45)';
+        ctx.fillStyle = 'rgba(26,58,74,0.5)';
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.size, 0, Math.PI * 2);
         ctx.fill();
